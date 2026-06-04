@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Princess 👑</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffd6e0,#f5a9b8);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    max-width:700px;
+    padding:30px;
+}
+
+h1{
+    color:white;
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+p{
+    color:white;
+    font-size:24px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#msg{
+    margin-top:35px;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    min-height:80px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🥺 Sorry Princess 👑</h1>
+
+<p>
+Princess, mujhe pata hai aap naraz ho. 🥺<br><br>
+
+Mujhse ghalti hui.<br>
+Ainda kabhi aisi harkat nahi karunga. 💖<br><br>
+
+Please mujhe maaf kar do. 🌹
+</p>
+
+<button onclick="showMessage()">
+Yahan Click Karo 💖
+</button>
+
+<div id="msg"></div>
+
+</div>
+
+<script>
+const messages = [
+"😂 Acha ji, click bhi kar diya!",
+"😊 Ab thori si smile aa rahi hai?",
+"🍫 Ye lo virtual chocolate!",
+"✨ Tum bohat special ho!",
+"💖 Tumhari dosti mere liye bohat qeemti hai!",
+"💖 Dosti me choti moti unch neech hojati hai!",
+"🥺 Please mujhe maaf kar do!"
+];
+
+let index = 0;
+
+function showMessage() {
+    const msg = document.getElementById("msg");
+
+    if(index < messages.length){
+        msg.innerHTML = messages[index];
+        index++;
+    } else {
+        msg.innerHTML =
+        "👑 Princess, mujhe umeed hai aap ka gussa thora kam hua hoga. 💖";
+    }
+}
+</script>
+
+</body>
+</html>
