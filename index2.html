@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princess Website 👑</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#ff6b81,#ff9ff3,#feca57,#48dbfb);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    text-align:center;
+    color:white;
+    padding:30px;
+    max-width:700px;
+}
+
+h1{
+    font-size:4rem;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+.card{
+    margin-top:20px;
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+}
+
+p{
+    margin:10px 0;
+    font-size:1.2rem;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.emoji{
+    position:absolute;
+    font-size:30px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>👑 Princess 👑</h1>
+
+<div class="card">
+
+<p>😂 Welcome Princess!</p>
+<p>🚀 Official CEO of Tarkuli Industries</p>
+<p>📚 Gold Medalist From Jahil University</p>
+<p>😆 Bhanghi Level: Infinite</p>
+<p>❤️ Still My Favorite Human</p>
+
+<button onclick="showMessage()">
+Click For Surprise 🎁
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const messages = [
+"👑 Princess detected!",
+"😂 Bhanghi mode activated!",
+"📚 Jahil University welcomes you!",
+"🚀 Tarkuli has entered the chat!",
+"❤️ You're still awesome!",
+"🎉 Congratulations, Princess!",
+"😂 Drama level: Maximum!",
+"👑 Queen of Funny Moments!"
+];
+
+function showMessage(){
+    let msg = messages[Math.floor(Math.random()*messages.length)];
+    alert(msg);
+}
+
+const emojis = ["👑","❤️","😂","✨","🎉","🌸","💖"];
+
+setInterval(()=>{
+    let emoji=document.createElement("div");
+
+    emoji.className="emoji";
+    emoji.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+    emoji.style.left=Math.random()*100+"vw";
+    emoji.style.animationDuration=(3+Math.random()*4)+"s";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(()=>{
+        emoji.remove();
+    },7000);
+
+},300);
+
+</script>
+
+</body>
+</html>
